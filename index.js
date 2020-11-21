@@ -7,7 +7,53 @@
 
 // ======== OBJECTS DEFINITIONS ========
 // Define your objects here
+const catSaying = 'meow!';
 
+const dog = {
+   legs: 4,
+   hands: 0,
+   name: 'A Dog',
+   gender: 'male',
+   saying: 'woof-woof!',
+   species: 'dog',
+   friends: ['A Man', 'A Woman'],
+};
+const cat = {
+   legs: 4,
+   hands: 0,
+   name: 'A Cat',
+   gender: 'male',
+   saying: catSaying,
+   species: 'cat',
+   friends: ['A Woman'],
+};
+const woman = {
+   legs: 2,
+   hands: 2,
+   name: 'A Woman',
+   gender: 'female',
+   saying: `I'm a woman!`,
+   species: 'human',
+   friends: ['A Man', 'A Cat', 'A Dog'],
+};
+const man = {
+   legs: 2,
+   hands: 2,
+   name: 'A Man',
+   gender: 'male',
+   saying: `I'm a man!`,
+   species: 'human',
+   friends: ['A Woman', 'A Dog', 'A Cat'],
+};
+const catwoman = {
+   legs: 2,
+   hands: 2,
+   name: 'A CatWoman',
+   gender: 'female',
+   saying: catSaying,
+   species: 'human',
+   friends: ['A Cat'],
+};
 
 // ======== OUTPUT ========
 /* Use print(message) for output.
@@ -27,5 +73,12 @@
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
    */
+
+
+const printList = [dog, cat, man, woman, catwoman];
+
+printList.forEach( obj => {
+   print(`${obj.species};${obj.name};${obj.gender};${obj.legs};${obj.hands};${obj.saying};${obj.friends.join(', ')}`);
+} );
 
 
