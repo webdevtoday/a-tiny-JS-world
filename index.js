@@ -10,7 +10,6 @@
 
 const Mammal = function({name, gender, friends}) {
    this.legs = 4;
-   this.hands = 0;
 
    this.name = name;
    this.gender = gender;
