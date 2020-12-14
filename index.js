@@ -39,22 +39,35 @@ class Human extends Inhabitant {
 }
 
 class Dog extends Inhabitant {
-   constructor(name, gender, saying, friends) {
-      super(name, gender, saying, 'dog', 4, friends);
+   constructor(name, gender, friends) {
+      super(name, gender, 'woof-woof!', 'dog', 4, friends);
    }
 }
 
 class Cat extends Inhabitant {
-   constructor(name, gender, saying, friends) {
-      super(name, gender, saying, 'cat', 4, friends);
+   constructor(name, gender, friends) {
+      super(name, gender, 'meow!', 'cat', 4, friends);
    }
 }
 
-const dog = new Dog('Jhonny', 'male', 'woof-woof!', ['Andrew', 'Anastasia']);
-const cat = new Cat('Murka', 'female', 'meow!', ['Anastasia']);
+class CatWoman extends Cat {
+   constructor(name, friends) {
+      super(name, 'female', friends);
+      this.legs = 2;
+      this.hands = 2;
+   }
+   getProperties() {
+      const props = super.getProperties();
+      props.splice(3, 0, this.hands);
+      return props;
+   }
+}
+
+const dog = new Dog('Jhonny', 'male', ['Andrew', 'Anastasia']);
+const cat = new Cat('Murka', 'female', ['Anastasia']);
 const woman = new Human('Anastasia', 'female', 'I\'m a woman!', ['Andrew', 'Murka', 'Jhonny']);
 const man = new Human('Andrew', 'male', 'I\'m a man!', ['Anastasia', 'Jhonny', 'Murka']);
-const catwoman = new Human('CatWoman', 'female', cat.saying, []);
+const catwoman = new CatWoman('CatWoman', []);
 
 // ======== OUTPUT ========
 /* Use print(message) for output.
