@@ -50,16 +50,10 @@ class Cat extends Inhabitant {
    }
 }
 
-class CatWoman extends Cat {
-   constructor(name, friends) {
-      super(name, 'female', friends);
-      this.legs = 2;
-      this.hands = 2;
-   }
-   getProperties() {
-      const props = super.getProperties();
-      props.splice(3, 0, this.hands);
-      return props;
+class CatWoman extends Human {
+   constructor(name, saying, friends) {
+      super(name, 'female', saying, friends);
+      this.species = 'CatWoman';
    }
 }
 
@@ -67,7 +61,7 @@ const dog = new Dog('Jhonny', 'male', ['Andrew', 'Anastasia']);
 const cat = new Cat('Murka', 'female', ['Anastasia']);
 const woman = new Human('Anastasia', 'female', 'I\'m a woman!', ['Andrew', 'Murka', 'Jhonny']);
 const man = new Human('Andrew', 'male', 'I\'m a man!', ['Anastasia', 'Jhonny', 'Murka']);
-const catwoman = new CatWoman('CatWoman', []);
+const catwoman = new CatWoman('CatWoman', cat.saying, []);
 
 // ======== OUTPUT ========
 /* Use print(message) for output.
